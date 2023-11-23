@@ -1,0 +1,68 @@
+.scene {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid #CCC; */
+    margin: 80px;
+    perspective: 400px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube.show-front  { transform: translateZ(-100px) rotateY(   -20deg) rotateX(-20deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -110deg) rotateX(20deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-160deg) rotateX(-20deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  110deg) rotateX(20deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -70deg) rotateY(-20deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  70deg) rotateY(20deg); }
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube__face img {
+    width: 170px;
+}
+
+.cube__face--left img {
+    width: 150px;
+}
+
+.cube__face--top img {
+    width: 90px;
+}
+
+.cube__face--front  { background: rgb(242, 235, 235); }
+.cube__face--right  { background: rgb(242, 235, 235); }
+.cube__face--back   { background: rgb(242, 235, 235);}
+.cube__face--left   { background: rgb(242, 235, 235);}
+.cube__face--top    { background: rgb(242, 235, 235); }
+.cube__face--bottom { background: rgb(242, 235, 235); }
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+label { margin-right: 10px; }
